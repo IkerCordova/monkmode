@@ -1,6 +1,6 @@
 /* Monk Mode — works offline. The page loads fresh when there is internet;
    fonts, 3D engine, images and icons come from the phone's cache. */
-const V = 'monkmode-v1';
+const V = 'monkmode-v2';
 const SHELL = [
   './', './index.html', './manifest.webmanifest',
   './vendor/three.min.js', './img/statue.webp',
@@ -9,7 +9,7 @@ const SHELL = [
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(V).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(V).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', e => {
@@ -27,7 +27,7 @@ self.addEventListener('fetch', e => {
 
   if (req.mode === 'navigate') {
     e.respondWith(
-      fetch(req)
+      fetch(new Request(req.url, { cache: 'no-cache', credentials: 'same-origin' }))
         .then(res => { const copy = res.clone(); caches.open(V).then(c => c.put('./index.html', copy)); return res; })
         .catch(() => caches.match('./index.html').then(r => r || caches.match('./')))
     );

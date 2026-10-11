@@ -265,6 +265,55 @@ details.custom .inline-fields{margin:10px 0}
 .data-btns{display:flex;flex-wrap:wrap;gap:10px}
 .confirm{display:grid;gap:12px;padding:14px;border-radius:16px;background:var(--pit);box-shadow:inset 0 3px 8px rgba(0,0,0,.95),inset 0 0 0 1px rgba(255,255,255,.1)}
 .x-close{margin-left:auto;width:32px;height:32px;border-radius:10px;color:var(--muted);font-size:18px}
+#installBanner:empty,#hoyBanner:empty{display:none}
+#hoyBanner{display:grid;gap:14px}
+.banner .key{margin-top:10px}
+
+/* ---------- retos ---------- */
+.proj-btn{pointer-events:auto;display:inline-flex;align-items:center;gap:8px;max-width:64%;padding:8px 12px;margin:-8px 0 0 -12px;border-radius:12px;
+  background:rgba(0,0,0,.5);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);font:700 10.5px/1 var(--body);font-stretch:115%;letter-spacing:.2em;text-transform:uppercase;color:var(--fg)}
+.proj-btn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.proj-btn i{font-style:normal;color:var(--muted);letter-spacing:0;font-size:12px}
+body.lock{overflow:hidden}
+.sheet{position:fixed;inset:0;z-index:55;display:flex;align-items:flex-end;justify-content:center}
+.sheet-back{position:absolute;inset:0;background:rgba(0,0,0,.74);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:fadeIn .25s both}
+.sheet-panel{position:relative;width:100%;max-width:560px;max-height:calc(100dvh - env(safe-area-inset-top,0px) - 20px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  border-radius:28px 28px 0 0;background:linear-gradient(180deg,#1a1a1d,#0b0b0c 160px);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 -30px 60px rgba(0,0,0,.85);
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(16px,env(safe-area-inset-left,0px));animation:sheetUp .35s cubic-bezier(.2,.8,.2,1) both}
+.sheet-grab{width:40px;height:5px;border-radius:9px;background:#333;margin:0 auto 10px}
+.sheet-head{display:flex;align-items:center;gap:12px;padding:6px 2px 16px}
+@keyframes sheetUp{from{transform:translateY(48px);opacity:0}to{transform:none;opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.form{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+.fgroup{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.flabel{font:700 10.5px/1.1 var(--body);font-stretch:115%;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.field input.text{font:800 20px/1 var(--display);font-stretch:112%}
+.seg{display:grid;grid-template-columns:repeat(var(--cols,5),minmax(0,1fr));gap:8px}
+.seg .chip{height:auto;min-height:54px;padding:10px 4px;display:grid;place-content:center;gap:5px;text-align:center}
+.seg .chip b{font:900 21px/1 var(--display);font-stretch:118%}
+.seg .chip small{font:500 10px/1.15 var(--mono);letter-spacing:.02em;opacity:.8}
+.seg.wide .chip b{font-size:16px;font-stretch:112%}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.mac4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.mini{display:grid;gap:6px;min-width:0}
+.mini > span{font:600 10px/1.2 var(--mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.mini input,.mini select{width:100%;min-width:0;height:50px;border-radius:14px;border:0;outline:0;padding:0 8px;text-align:center;background:var(--pit);
+  box-shadow:inset 0 3px 8px rgba(0,0,0,.95),inset 0 0 0 1px rgba(255,255,255,.08);font:600 17px var(--mono);font-variant-numeric:tabular-nums;color:var(--fg);appearance:none;-webkit-appearance:none;text-align-last:center}
+.form .chips .chip{height:40px}
+.preview{display:grid;gap:7px;padding:14px 16px;border-radius:16px;background:var(--pit);box-shadow:inset 0 3px 8px rgba(0,0,0,.95),inset 0 0 0 1px rgba(255,255,255,.1)}
+.preview b{font:800 16px/1.2 var(--display);font-stretch:112%}
+.preview p{margin:0;font:500 12.5px/1.45 var(--mono);color:var(--fg-2)}
+.preview p.warn{color:var(--fg)}
+.form-actions{display:grid;gap:12px}
+.form-actions .key{width:100%}
+.proj-list{display:grid;gap:12px}
+.proj-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:14px 16px;border-radius:18px;
+  background:linear-gradient(180deg,#19191c,#0e0e10);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 4px 0 #000,0 12px 20px rgba(0,0,0,.6)}
+.proj-row.is-active{box-shadow:inset 0 0 0 1.5px #fff,0 4px 0 #000,0 12px 20px rgba(0,0,0,.6)}
+.proj-row b{display:block;font:800 17px/1.15 var(--display);font-stretch:112%;overflow-wrap:anywhere}
+.proj-row small{display:block;margin-top:5px;font:500 11.5px/1.4 var(--mono);color:var(--muted)}
+.version{margin:0;font:500 11px/1.4 var(--mono);color:var(--dim);padding:0 18px 16px}
+.sp-day .eyebrow{max-width:58vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ---------- progress ---------- */
 .kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -312,7 +361,7 @@ details.custom .inline-fields{margin:10px 0}
 
 /* ---------- plan ---------- */
 .big-goal{padding:20px 18px;display:grid;gap:12px}
-.big-goal .x3d{font-size:56px}
+.big-goal .x3d{font-size:clamp(38px,11vw,56px)}
 .goal-arrow{font:500 22px var(--mono);color:var(--muted);margin:0 6px}
 .rules{margin:0;padding:0;list-style:none}
 .rules li{display:flex;justify-content:space-between;gap:14px;padding:12px 18px;border-top:1px solid var(--line)}
@@ -378,7 +427,7 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
   </div>
   <canvas class="dust" id="dust" aria-hidden="true"></canvas>
   <div class="splash-ui">
-    <div class="splash-top"><span>Reto 25 días</span><span>10 oct — 3 nov</span></div>
+    <div class="splash-top"><span id="spTopL">Reto</span><span id="spTopR"></span></div>
     <div class="splash-bottom">
       <div class="sp-day"><span class="eyebrow" id="spEyebrow">Día</span><b class="x3d" id="spDay">01</b><small id="spSub">de 25</small></div>
       <button class="key key-white" id="enter" type="button">Entrar</button>
@@ -400,9 +449,9 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
   <section class="tab" id="tab-hoy">
     <div class="slab mala-card">
       <div class="mala" id="mala">
-        <canvas id="malaCanvas" aria-label="Collar de 25 cuentas, una por día del reto"></canvas>
+        <canvas id="malaCanvas" aria-label="Collar de cuentas, una por día del reto"></canvas>
         <div class="mala-fallback" id="malaFallback" hidden></div>
-        <div class="mala-top"><span class="eyebrow" id="hoyEyebrow">Hoy</span><span class="eyebrow" id="hoyPhase"></span></div>
+        <div class="mala-top"><button type="button" class="proj-btn" data-act="projects" aria-label="Cambiar o crear reto"><span id="hoyEyebrow">Monk Mode</span><i>▾</i></button><span class="eyebrow" id="hoyPhase"></span></div>
         <div class="mala-hud">
           <div><div class="x3d" id="hoyDay">01</div><div class="hud-sub" id="hoySub">de 25</div></div>
           <div class="score"><div class="score-n num" id="hoyScore">0%</div><span class="eyebrow">del día</span></div>
@@ -424,14 +473,19 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
       <input type="file" id="inPhoto" accept="image/*" hidden>
     </div>
 
-    <div class="slab block">
+    <div class="slab block" id="bodyBlock">
       <div class="block-h"><span class="eyebrow">Cuerpo</span><span class="block-meta" id="gymMeta"></span></div>
       <div id="bodyTasks"></div>
-      <div class="row-field">
+      <div class="row-field" id="stepsRow">
         <label for="inSteps">Pasos</label>
-        <div class="field"><input id="inSteps" type="number" inputmode="numeric" step="100" min="0" placeholder="0"><span>/ 10,000</span></div>
+        <div class="field"><input id="inSteps" type="number" inputmode="numeric" step="100" min="0" placeholder="0"><span id="stepsGoal">/ 10,000</span></div>
         <div class="tube"><i id="stepsFill" style="width:0%"></i></div>
       </div>
+    </div>
+
+    <div class="slab block" id="focusBlock" hidden>
+      <div class="block-h"><span class="eyebrow">Enfoque</span><span class="block-meta">Full focus</span></div>
+      <div id="focusTasks"></div>
     </div>
 
     <div class="slab block">
@@ -439,10 +493,10 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
       <div id="hoyFood"></div>
     </div>
 
-    <div class="slab block">
+    <div class="slab block" id="nightBlock">
       <div class="block-h"><span class="eyebrow">Noche</span><span class="block-meta" id="sleepMeta"></span></div>
       <div id="nightTasks"></div>
-      <div class="row-field">
+      <div class="row-field" id="bookRow">
         <label for="inBook">Libro en la cama</label>
         <div class="field select"><select id="inBook"></select></div>
       </div>
@@ -486,15 +540,15 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
 
   <!-- PROGRESO -->
   <section class="tab" id="tab-progreso" hidden>
-    <div class="tab-head"><h2 class="h2">Progreso</h2><p class="tab-sub">92 → 87 kg. Pésate cada mañana en ayunas; la línea que importa es la tendencia de 7 días.</p></div>
+    <div class="tab-head"><h2 class="h2">Progreso</h2><p class="tab-sub" id="progSub"></p></div>
     <div class="kpis" id="kpis"></div>
     <div class="slab block">
       <div class="block-h"><span class="eyebrow">Peso diario</span><span class="block-meta" id="chartMeta"></span></div>
       <div class="chart-wrap" id="chart"></div>
-      <div class="legend"><span><i></i>Báscula</span><span><i class="plan"></i>Ruta a 87</span><span><i class="mark"></i>Tendencia 7 días</span></div>
+      <div class="legend"><span><i></i>Báscula</span><span><i class="plan"></i><span id="legGoal">Ruta a la meta</span></span><span><i class="mark"></i>Tendencia 7 días</span></div>
     </div>
     <div class="slab block">
-      <div class="block-h"><span class="eyebrow">Los 25 días</span><span class="block-meta">Toca uno para abrirlo</span></div>
+      <div class="block-h"><span class="eyebrow" id="gridTitle">Los días</span><span class="block-meta">Toca uno para abrirlo</span></div>
       <div class="grid25" id="grid25"></div>
     </div>
     <div class="slab block">
@@ -512,18 +566,12 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
 
   <!-- PLAN -->
   <section class="tab" id="tab-plan" hidden>
-    <div class="tab-head"><h2 class="h2">El plan</h2><p class="tab-sub">Las reglas de los 25 días. Lo que cambies aquí se aplica en toda la app.</p></div>
+    <div class="tab-head"><h2 class="h2">El plan</h2><p class="tab-sub" id="planSub"></p></div>
+    <div class="slab block" id="projBox"></div>
     <div class="slab big-goal" id="goalBox"></div>
     <div class="slab block">
       <div class="block-h"><span class="eyebrow">Reglas diarias</span></div>
-      <ul class="rules">
-        <li><span>Pesas intensas</span><b>5 días por semana</b></li>
-        <li><span>Caminadora inclinada</span><b>30 min diarios</b></li>
-        <li><span>Pasos</span><b>10,000 diarios</b></li>
-        <li><span>Báscula y foto</span><b>Diario, en ayunas</b></li>
-        <li><span>Macros</span><b>2,300 kcal · 195 P · 205 C · 75 G</b></li>
-        <li><span>Celular apagado</span><b>Libro en la cama</b></li>
-      </ul>
+      <ul class="rules" id="rulesList"></ul>
     </div>
     <div class="slab block">
       <div class="block-h"><span class="eyebrow">Días de pesas</span><span class="block-meta" id="gymCount"></span></div>
@@ -534,7 +582,7 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
       <div class="tbl-wrap" id="mealTable"></div>
     </div>
     <div class="slab block">
-      <div class="block-h"><span class="eyebrow">Sueño</span><span class="block-meta">8 horas, bajando gradual</span></div>
+      <div class="block-h"><span class="eyebrow">Sueño</span><span class="block-meta" id="sleepPlanMeta">8 horas</span></div>
       <div class="tbl-wrap" id="sleepTable"></div>
     </div>
     <div class="slab block">
@@ -551,6 +599,7 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
       <div class="block-h"><span class="eyebrow">Tus datos</span></div>
       <div class="pad" id="dataBox"></div>
       <input type="file" id="inImport" accept="application/json,.json" hidden>
+      <p class="version">Monk Mode v2 · retos personalizados</p>
     </div>
   </section>
 </div>
@@ -563,6 +612,15 @@ tr.is-now td:first-child{box-shadow:inset 2px 0 0 #fff}
   <button type="button" data-tab="plan"><svg viewBox="0 0 24 24"><path d="M8 6.5h12M8 12h12M8 17.5h12"/><circle cx="4.5" cy="6.5" r="1.1" fill="currentColor"/><circle cx="4.5" cy="12" r="1.1" fill="currentColor"/><circle cx="4.5" cy="17.5" r="1.1" fill="currentColor"/></svg><span>Plan</span></button>
 </nav>
 
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <div class="sheet-back" data-act="sheet-close"></div>
+  <div class="sheet-panel" id="sheetPanel">
+    <div class="sheet-grab"></div>
+    <div class="sheet-head"><h2 class="h2" id="sheetTitle">Tus retos</h2><button type="button" class="x-close" data-act="sheet-close" aria-label="Cerrar">×</button></div>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="vendor/three.min.js"></script>
@@ -573,8 +631,8 @@ const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
 /* ================= constants ================= */
-const START = '2026-10-10', N = 25, GOAL = 87;
-const TV = [2300, 195, 205, 75];               // kcal, P, C, G
+let START = '2026-10-10', N = 25, GOAL = 87;   // set from the active reto
+let TV = [2300, 195, 205, 75];                 // kcal, P, C, G
 const WD = ['DOM','LUN','MAR','MIÉ','JUE','VIE','SÁB'];
 const WDL = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
 const WDS = ['D','L','M','Mi','J','V','S'];
@@ -620,12 +678,22 @@ const FOODS = {
 };
 const fam = id => FOODS[id].fam || id;
 
-const SIDE = '1 taza de arroz + 1 taza de verdura al vapor + ¼ de aguacate';
-const PLATES = {
-  pechuga: { t: 'Pechuga',          d: 'Pechuga (150 g cocida, ~200 g en crudo) + ' + SIDE, m: [567, 54.6, 56.9, 12.1] },
-  filete:  { t: 'Filete de res',    d: 'Filete de res (150 g cocido) + ' + SIDE,            m: [582, 50.1, 56.9, 16.5] },
-  atun:    { t: 'Medallón de atún', d: 'Medallón de atún (150 g) + ' + SIDE,               m: [514, 51.6, 56.9, 7.6] }
+const RICE = [205, 4.3, 44.5, 0.4], VERD = [50, 3, 9, 0.4], AVO = [64, 0.8, 3.4, 5.9];
+const PROT = {
+  pechuga: { t: 'Pechuga',          d: 'Pechuga (150 g cocida, ~200 g en crudo)', m: [248, 46.5, 0, 5.4] },
+  filete:  { t: 'Filete de res',    d: 'Filete de res (150 g cocido)',            m: [263, 42, 0, 9.8] },
+  atun:    { t: 'Medallón de atún', d: 'Medallón de atún (150 g)',                m: [195, 43.5, 0, 0.9] }
 };
+const PLATES = {};
+const riceTxt = r => (r === 1 ? '1 taza' : r === 0.5 ? '½ taza' : r === 0.75 ? '¾ de taza' : r + ' tazas') + ' de arroz';
+function buildPlates(r) {
+  for (const id in PROT) {
+    const x = PROT[id];
+    const m = [0, 1, 2, 3].map(i => Math.round((x.m[i] + RICE[i] * r + VERD[i] + AVO[i]) * 10) / 10);
+    PLATES[id] = { t: x.t, d: `${x.d} + ${riceTxt(r)} + 1 taza de verdura al vapor + ¼ de aguacate`, m };
+  }
+}
+buildPlates(1);
 const SLOTS = [
   { id: 'm1',   opts: { base: { t: 'Huevos con atún', d: '3 huevos + 1 lata de atún + 2 tortillas + 1 taza de verdura', m: [510, 50.8, 37, 17.2] } }, def: 'base' },
   { id: 'm2',   opts: PLATES, def: 'pechuga' },
@@ -639,9 +707,78 @@ const SLOT = Object.fromEntries(SLOTS.map(s => [s.id, s]));
 
 const DEFAULT_BOOKS = ['El Secreto', 'La Biblia', 'Cómo ganar amigos e influir sobre las personas'];
 const defaultConfig = () => ({
-  startWeight: 92, gymDays: [1, 2, 3, 4, 5], books: DEFAULT_BOOKS.slice(),
+  gymDays: [1, 2, 3, 4, 5], books: DEFAULT_BOOKS.slice(),
   pantry: { whey: true, platano: true, huevo: true, atun: true, tortilla: true, leche: true, arroz: true, aguacate: true, pechuga: true }
 });
+
+/* ================= retos (projects) ================= */
+const TASKS = [
+  { k: 'pesas',   t: 'Pesas' },
+  { k: 'cinta',   t: 'Caminadora' },
+  { k: 'pasos',   t: 'Pasos' },
+  { k: 'agua',    t: 'Agua 3 L' },
+  { k: 'azucar',  t: 'Cero azúcar' },
+  { k: 'deep',    t: 'Deep work' },
+  { k: 'celular', t: 'Celular apagado' },
+  { k: 'lectura', t: 'Lectura' },
+  { k: 'cama',    t: 'Dormir a tiempo' }
+];
+const ALL_ON = Object.fromEntries(TASKS.map(x => [x.k, true]));
+const PRESETS = {
+  express:   { name: 'Full Focus', macros: [2050, 200, 160, 65], rice: 0.5, steps: 12000, cinta: 45, sleepFrom: 1350, sleepTo: 1320, rate: 0.2,  tasks: Object.assign({}, ALL_ON) },
+  constante: { name: 'Monk Mode',  macros: [2300, 195, 205, 75], rice: 1,   steps: 10000, cinta: 30, sleepFrom: 1380, sleepTo: 1320, rate: 0.12, tasks: Object.assign({}, ALL_ON, { agua: false, azucar: false, deep: false }) }
+};
+const LENS = [5, 7, 10, 15, 25];
+const RICES = [0.5, 0.75, 1];
+const STEP_OPTS = [8000, 10000, 12000, 15000];
+const CINTA_OPTS = [20, 30, 45, 60];
+const SLEEP_OPTS = [1410, 1380, 1365, 1350, 1335, 1320, 1290];
+const round1 = v => Math.round(v * 10) / 10;
+const addDays = (k, n) => { const d = dOf(k); d.setDate(d.getDate() + n); return kOf(d); };
+const hm = mins => { const t = ((Math.round(mins) % 1440) + 1440) % 1440; const h = Math.floor(t / 60), m = t % 60; return `${h % 12 || 12}:${pad(m)} ${h >= 12 ? 'pm' : 'am'}`; };
+function normalizeProject(p) {
+  if (!PRESETS[p.mode]) p.mode = 'constante';
+  const pre = PRESETS[p.mode];
+  p.id = String(p.id || ('p' + Date.now().toString(36)));
+  p.name = String(p.name || '').trim().slice(0, 40) || pre.name;
+  p.len = clamp(Math.round(+p.len || 25), 3, 60);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(p.start || '')) p.start = TODAY;
+  p.startWeight = +p.startWeight > 30 && +p.startWeight < 300 ? round1(+p.startWeight) : 92;
+  p.goal = +p.goal > 30 && +p.goal < 300 ? round1(+p.goal) : round1(p.startWeight - pre.rate * p.len);
+  p.macros = Array.isArray(p.macros) && p.macros.length === 4 && p.macros.every(x => +x > 0) ? p.macros.map(x => Math.round(+x)) : pre.macros.slice();
+  p.rice = RICES.includes(+p.rice) ? +p.rice : pre.rice;
+  p.steps = +p.steps > 0 ? Math.round(+p.steps) : pre.steps;
+  p.cinta = +p.cinta > 0 ? Math.round(+p.cinta) : pre.cinta;
+  p.sleepFrom = +p.sleepFrom > 0 ? +p.sleepFrom : pre.sleepFrom;
+  p.sleepTo = +p.sleepTo > 0 ? +p.sleepTo : pre.sleepTo;
+  p.tasks = Object.assign({}, pre.tasks, p.tasks || {});
+  return p;
+}
+function ensureProjects(c) {
+  if (!Array.isArray(c.projects) || !c.projects.length) {
+    c.projects = [{ id: 'monk25', name: 'Monk Mode', mode: 'constante', len: 25, start: '2026-10-10', startWeight: +c.startWeight || 92, goal: 87,
+      macros: [2300, 195, 205, 75], rice: 1, steps: 10000, cinta: 30, sleepFrom: 1380, sleepTo: 1320, tasks: Object.assign({}, PRESETS.constante.tasks) }];
+    c.active = 'monk25';
+  }
+  c.projects.forEach(normalizeProject);
+  if (!c.projects.some(p => p.id === c.active)) c.active = c.projects[0].id;
+  return c;
+}
+function P() { const c = state.config; return c.projects.find(p => p.id === c.active) || c.projects[0]; }
+function syncProject() {
+  const p = P();
+  START = p.start; N = p.len; GOAL = p.goal; TV = p.macros.slice();
+  TN = nOf(TODAY);
+  buildPlates(p.rice);
+}
+function projStatus(p) {
+  const n = Math.round((dOf(TODAY) - dOf(p.start)) / 864e5) + 1;
+  if (n < 1) return { s: 'soon', n, txt: 'Empieza ' + (n === 0 ? 'mañana' : dateLabel(p.start).toLowerCase()) };
+  if (n > p.len) return { s: 'done', n, txt: 'Terminado' };
+  return { s: 'live', n, txt: 'Día ' + n + ' de ' + p.len };
+}
+function projRange(p) { const a = dOf(p.start), b = dOf(addDays(p.start, p.len - 1)); return `${a.getDate()} ${MO[a.getMonth()]} – ${b.getDate()} ${MO[b.getMonth()]}`; }
+function sleepSteps(p) { const stepLen = Math.max(1, Math.ceil(p.len / 4)); return { stepLen, nSteps: Math.ceil(p.len / stepLen) }; }
 
 /* ================= vector helpers ================= */
 const Z = () => [0, 0, 0, 0];
@@ -663,7 +800,7 @@ function qtyTxt(id, q) {
 }
 
 /* ================= state ================= */
-const state = { days: {}, config: defaultConfig() };
+const state = { days: {}, config: ensureProjects(defaultConfig()) };
 let sel = clamp(TN, 1, N);
 let tab = 'hoy';
 let splashOn = true;
@@ -724,8 +861,10 @@ addEventListener('pagehide', () => { if (persistT) persistNow(); });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden' && persistT) persistNow(); });
 (function loadLocal() {
   const raw = lsGet(LS); if (!raw) return;
-  try { const o = JSON.parse(raw); if (o.days) state.days = o.days; if (o.config) state.config = Object.assign(defaultConfig(), o.config); } catch (e) {}
+  try { const o = JSON.parse(raw); if (o.days) state.days = o.days; if (o.config) state.config = ensureProjects(Object.assign(defaultConfig(), o.config)); } catch (e) {}
 })();
+syncProject();
+sel = clamp(TN, 1, N);
 function askPersist() {
   try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().then(ok => { persisted = !!ok; if (tab === 'plan') renderData(); }).catch(() => {}); } catch (e) {}
 }
@@ -736,10 +875,11 @@ const isGym = k => state.config.gymDays.includes(wd(k));
 const isFutbol = k => wd(k) === 2 || wd(k) === 4;
 const isWeekend = k => wd(k) === 0 || wd(k) === 6;
 function sleepFor(n) {
-  if (n <= 7)  return { bed: '11:00 pm', off: '10:00 pm', wake: '7:00 am', wk: 1, from: 1, to: 7 };
-  if (n <= 14) return { bed: '10:40 pm', off: '10:00 pm', wake: '6:40 am', wk: 2, from: 8, to: 14 };
-  if (n <= 21) return { bed: '10:20 pm', off: '9:50 pm',  wake: '6:20 am', wk: 3, from: 15, to: 21 };
-  return            { bed: '10:00 pm', off: '9:30 pm',  wake: '6:00 am', wk: 4, from: 22, to: 25 };
+  const p = P(), { stepLen, nSteps } = sleepSteps(p);
+  const idx = Math.min(nSteps - 1, Math.floor((clamp(n, 1, p.len) - 1) / stepLen));
+  const bedM = nSteps > 1 ? Math.round((p.sleepFrom - (p.sleepFrom - p.sleepTo) * idx / (nSteps - 1)) / 5) * 5 : p.sleepTo;
+  const offM = Math.min(22 * 60, bedM - 30);
+  return { bed: hm(bedM), off: hm(offM), wake: hm(bedM + 480), wk: idx + 1, from: idx * stepLen + 1, to: Math.min(p.len, (idx + 1) * stepLen), label: stepLen === 7 ? 'Semana' : 'Fase' };
 }
 function slotTitle(id, k) {
   const gym = isGym(k);
@@ -758,8 +898,10 @@ function slotWhen(id, k) {
 function slotV(k, id) {
   const m = D(k).meals[id];
   if (id === 'pre') return itemsV(m.items);
-  const s = SLOT[id]; const o = s.opts[m.o] || s.opts[s.def]; return o.m.slice();
+  if (m.d && Array.isArray(m.m)) return m.m.slice();
+  return optM(k, id);
 }
+function optM(k, id) { const m = D(k).meals[id], s = SLOT[id]; return (s.opts[m.o] || s.opts[s.def]).m.slice(); }
 const extrasV = k => D(k).extras.reduce((s, x) => vadd(s, [x.k || 0, x.p || 0, x.c || 0, x.g || 0]), Z());
 function eatenV(k) { const d = D(k); let s = extrasV(k); for (const sl of SLOTS) if (d.meals[sl.id].d) s = vadd(s, slotV(k, sl.id)); return s; }
 function baseNoPre(k) { let s = extrasV(k); for (const sl of SLOTS) if (sl.id !== 'pre') s = vadd(s, slotV(k, sl.id)); return s; }
@@ -774,17 +916,15 @@ function projV(k) { return vadd(baseNoPre(k), itemsV(preChosen(k))); }
 const mealsDone = k => SLOTS.filter(s => D(k).meals[s.id].d).length;
 
 function scoreItems(k) {
-  const d = D(k), gym = isGym(k), it = [];
+  const d = D(k), gym = isGym(k), p = P(), T = p.tasks, it = [];
   it.push(d.w != null);
   it.push(!!photoSrc(k));
-  if (gym || d.ck.pesas) it.push(!!d.ck.pesas);
-  it.push(!!d.ck.cinta);
-  it.push((d.steps || 0) >= 10000);
+  if (T.pesas && (gym || d.ck.pesas)) it.push(!!d.ck.pesas);
+  if (T.cinta) it.push(!!d.ck.cinta);
+  if (T.pasos) it.push((d.steps || 0) >= p.steps);
   it.push(mealsDone(k) === 5 || (mealsDone(k) === 4 && !gym && !d.meals.pre.d));
   it.push(eatenV(k)[1] >= TV[1] - 5);
-  it.push(!!d.ck.celular);
-  it.push(!!d.ck.lectura);
-  it.push(!!d.ck.cama);
+  for (const x of ['agua', 'azucar', 'deep', 'celular', 'lectura', 'cama']) if (T[x]) it.push(!!d.ck[x]);
   return it;
 }
 const score = k => { const it = scoreItems(k); return it.filter(Boolean).length / it.length; };
@@ -918,7 +1058,7 @@ async function applyImport() {
   toast('Restaurando…');
   try {
     for (const [k, url] of Object.entries(o.photos || {})) { const b = await (await fetch(url)).blob(); await idbPut('photos', k, b); }
-    state.days = o.days || {}; state.config = Object.assign(defaultConfig(), o.config || {});
+    state.days = o.days || {}; state.config = ensureProjects(Object.assign(defaultConfig(), o.config || {})); applyProject();
     await loadPhotos(); persistNow(); pendingImport = null; memo.clear();
     toast('Respaldo restaurado'); render();
   } catch (e) { toast('No se pudo restaurar el respaldo.'); }
@@ -949,7 +1089,16 @@ function render() {
   mala.update();
 }
 function dateLabel(k) { const d = dOf(k); return WD[d.getDay()] + ' ' + d.getDate() + ' ' + MO[d.getMonth()].toUpperCase(); }
+function renderSplash() {
+  const p = P(), n = clamp(TN, 1, N);
+  $('#spDay').textContent = pad(n);
+  $('#spEyebrow').textContent = p.name + (TN < 1 ? ' · empieza' : TN > N ? ' · terminado' : ' · día');
+  $('#spSub').textContent = TN < 1 ? (TN === 0 ? 'Mañana · ' : '') + dateLabel(START).toLowerCase() : TN > N ? N + ' de ' + N : 'de ' + N + ' · ' + (N - n) + (N - n === 1 ? ' restante' : ' restantes');
+  $('#spTopL').textContent = 'Reto ' + N + ' días';
+  $('#spTopR').textContent = projRange(p).replace('–', '—');
+}
 function renderTop() {
+  renderSplash();
   const k = keyN(sel);
   $('#dnDay').textContent = 'DÍA ' + pad(sel);
   $('#dnDate').textContent = dateLabel(k) + (sel === TN ? ' · HOY' : '');
@@ -964,21 +1113,24 @@ function taskBtn(key, title, meta, on, opt) {
 }
 
 function nextUp(k) {
-  const d = D(k), gym = isGym(k), sl = sleepFor(nOf(k));
+  const d = D(k), gym = isGym(k), sl = sleepFor(nOf(k)), p = P(), T = p.tasks;
   const order = [
     [d.w == null, 'Pésate en ayunas', 'Antes de tomar agua o comer', 'hoy'],
     [!photoSrc(k), 'Foto del día', 'Misma luz y mismo lugar', 'photo'],
+    [T.deep && !d.ck.deep, 'Deep work', '60 minutos, celular en otro cuarto', 'hoy'],
     [!d.meals.m1.d, slotTitle('m1', k), SLOT.m1.opts.base.t, 'comida'],
-    [!d.meals.m2.d, slotTitle('m2', k), PLATES[d.meals.m2.o].t + ' con arroz', 'comida'],
-    [!d.meals.m3.d, slotTitle('m3', k), PLATES[d.meals.m3.o].t + ' con arroz', 'comida'],
+    [!d.meals.m2.d, slotTitle('m2', k), (PLATES[d.meals.m2.o] || PLATES.pechuga).t + ' con ' + riceTxt(p.rice).replace(' de arroz', '') + ' de arroz', 'comida'],
+    [!d.meals.m3.d, slotTitle('m3', k), (PLATES[d.meals.m3.o] || PLATES.filete).t + ' con ' + riceTxt(p.rice).replace(' de arroz', '') + ' de arroz', 'comida'],
     [gym && !d.meals.pre.d, 'Pre-entreno', comboName(preChosen(k)), 'comida'],
-    [gym && !d.ck.pesas, 'Pesas', 'Sesión intensa', 'hoy'],
-    [!d.ck.cinta, 'Caminadora inclinada', '30 minutos', 'hoy'],
+    [T.pesas && gym && !d.ck.pesas, 'Pesas', 'Sesión intensa', 'hoy'],
+    [T.cinta && !d.ck.cinta, 'Caminadora inclinada', p.cinta + ' minutos', 'hoy'],
     [!d.meals.cena.d, slotTitle('cena', k), SLOT.cena.opts[d.meals.cena.o].t, 'comida'],
-    [(d.steps || 0) < 10000, 'Completa tus pasos', fmt(d.steps || 0) + ' de 10,000', 'hoy'],
-    [!d.ck.celular, 'Apaga el celular', sl.off, 'hoy'],
-    [!d.ck.lectura, 'Lee en la cama', d.book || state.config.books[0] || 'Tu libro', 'hoy'],
-    [!d.ck.cama, 'A dormir', sl.bed, 'hoy']
+    [T.pasos && (d.steps || 0) < p.steps, 'Completa tus pasos', fmt(d.steps || 0) + ' de ' + fmt(p.steps), 'hoy'],
+    [T.agua && !d.ck.agua, 'Agua', '3 litros en el día', 'hoy'],
+    [T.azucar && !d.ck.azucar, 'Cero azúcar', 'Sin refrescos, jugos ni postres', 'hoy'],
+    [T.celular && !d.ck.celular, 'Apaga el celular', sl.off, 'hoy'],
+    [T.lectura && !d.ck.lectura, 'Lee en la cama', d.book || state.config.books[0] || 'Tu libro', 'hoy'],
+    [T.cama && !d.ck.cama, 'A dormir', sl.bed, 'hoy']
   ];
   return order.find(o => o[0]);
 }
@@ -987,21 +1139,29 @@ function renderHoy() {
   const k = keyN(sel), d = D(k), n = sel, sl = sleepFor(n), gym = isGym(k);
   const sc = score(k);
   $('#hoyDay').textContent = pad(n);
-  $('#hoySub').textContent = 'de 25 · ' + (N - n === 0 ? 'último día' : (N - n) + (N - n === 1 ? ' día restante' : ' días restantes'));
-  $('#hoyEyebrow').textContent = n === TN ? 'Hoy · ' + WDL[wd(k)] : WDL[wd(k)] + ' ' + dOf(k).getDate() + ' ' + MO[dOf(k).getMonth()];
-  $('#hoyPhase').textContent = 'Semana ' + sl.wk;
+  const p = P(), T = p.tasks;
+  $('#hoySub').textContent = 'de ' + N + ' · ' + (N - n === 0 ? 'último día' : (N - n) + (N - n === 1 ? ' día restante' : ' días restantes'));
+  $('#hoyEyebrow').textContent = p.name;
+  $('#hoyPhase').textContent = sl.label + ' ' + sl.wk;
   $('#hoyScore').textContent = Math.round(sc * 100) + '%';
 
-  /* banner */
+  /* banners */
   let b = '';
+  if (state.config.projects.length === 1) {
+    b += `<button type="button" class="slab banner" data-act="new-proj"><span class="dot"></span><span><span class="eyebrow">Nuevo</span><b style="margin-top:6px">Crea un reto de 5, 7, 10 o 15 días</b><small>Ponle nombre, elige modo Express y tus hábitos.</small></span><span class="arrow">→</span></button>`;
+  }
   if (TN < 1 && n === 1) {
-    b = `<div class="slab banner"><span class="dot"></span><span><b>Empieza mañana, sábado 10 de octubre</b><small>Hoy: meal prep, compra fruta y deja el cargador lejos de la cama.</small></span><span></span></div>`;
+    const sd = dOf(START);
+    b += `<div class="slab banner"><span class="dot"></span><span><b>${esc(p.name)} empieza ${TN === 0 ? 'mañana, ' : 'el '}${WDL[sd.getDay()]} ${sd.getDate()} ${MO[sd.getMonth()]}</b><small>Hoy: prepara tu comida, compra fruta y deja el cargador lejos de la cama.</small></span><span></span></div>`;
   } else if (TN > N) {
-    b = `<div class="slab banner"><span class="dot"></span><span><b>Reto terminado</b><small>Revisa tu antes y después en el Diario.</small></span><span class="arrow">→</span></div>`;
+    const other = state.config.projects.find(q => q.id !== p.id && projStatus(q).s === 'live');
+    b += `<div class="slab banner"><span class="dot"></span><span><b>${esc(p.name)} terminado</b><small>Revisa tu antes y después en el Diario.</small>${other
+      ? `<button type="button" class="key key-white small" data-use="${esc(other.id)}">Seguir con ${esc(other.name)}</button>`
+      : `<button type="button" class="key key-white small" data-act="new-proj">Nuevo reto</button>`}</span><span></span></div>`;
   } else {
     const nu = nextUp(k);
-    if (nu) b = `<button type="button" class="slab banner" data-next="${nu[3]}"><span class="dot"></span><span><span class="eyebrow">Lo siguiente</span><b style="margin-top:6px">${esc(nu[1])}</b><small>${esc(nu[2])}</small></span><span class="arrow">→</span></button>`;
-    else b = `<div class="slab banner"><span class="dot"></span><span><b>Día completo</b><small>Todo cumplido. Así se construye.</small></span><span></span></div>`;
+    if (nu) b += `<button type="button" class="slab banner" data-next="${nu[3]}"><span class="dot"></span><span><span class="eyebrow">Lo siguiente</span><b style="margin-top:6px">${esc(nu[1])}</b><small>${esc(nu[2])}</small></span><span class="arrow">→</span></button>`;
+    else b += `<div class="slab banner"><span class="dot"></span><span><b>Día completo</b><small>Todo cumplido. Así se construye.</small></span><span></span></div>`;
   }
   $('#hoyBanner').innerHTML = b;
 
@@ -1009,14 +1169,14 @@ function renderHoy() {
   $('#wakeMeta').textContent = 'Despertar ' + sl.wake;
   setVal($('#inWeight'), d.w != null ? d.w : '');
   const prevW = lastWeightBefore(n);
-  const start = state.config.startWeight;
+  const start = p.startWeight;
   let wn = '';
   if (d.w != null) {
     const dd = d.w - start;
-    wn = `<b>${dd <= 0 ? '−' : '+'}${fmt(Math.abs(dd), 1)} kg</b> desde el inicio`;
+    wn = Math.abs(dd) < 0.05 ? '<b>Peso de inicio</b>' : `<b>${dd <= 0 ? '−' : '+'}${fmt(Math.abs(dd), 1)} kg</b> desde el inicio`;
     if (prevW) { const dy = d.w - prevW.w; wn += ` · ${dy <= 0 ? '−' : '+'}${fmt(Math.abs(dy), 1)} vs día ${prevW.n}`; }
     wn += ` · faltan <b>${fmt(Math.max(0, d.w - GOAL), 1)} kg</b>`;
-  } else wn = 'Inicio ' + fmt(start, 1) + ' kg · meta ' + GOAL + ' kg';
+  } else wn = 'Inicio ' + fmt(start, 1) + ' kg · meta ' + fmt(GOAL, 1) + ' kg';
   $('#weightNote').innerHTML = wn;
   const src = photoSrc(k);
   $('#photoRow').innerHTML = `<div class="thumb">${src ? `<img src="${esc(src)}" alt="Foto del día ${n}">` : 'SIN FOTO'}</div>
@@ -1026,24 +1186,34 @@ function renderHoy() {
   /* body */
   $('#gymMeta').textContent = gym ? 'Día de pesas' : 'Día sin pesas';
   $('#bodyTasks').innerHTML =
-    taskBtn('pesas', 'Pesas intensas', gym ? 'Sesión fuerte, sin celular entre series' : 'Descanso. Márcalo solo si entrenaste', !!d.ck.pesas, !gym) +
-    taskBtn('cinta', 'Caminadora inclinada', '30 minutos · inclinación alta', !!d.ck.cinta);
+    (T.pesas ? taskBtn('pesas', 'Pesas intensas', gym ? 'Sesión fuerte, sin celular entre series' : 'Descanso. Márcalo solo si entrenaste', !!d.ck.pesas, !gym) : '') +
+    (T.cinta ? taskBtn('cinta', 'Caminadora inclinada', p.cinta + ' minutos · inclinación alta', !!d.ck.cinta) : '');
+  $('#stepsRow').hidden = !T.pasos;
+  $('#bodyBlock').hidden = !(T.pesas || T.cinta || T.pasos);
+  $('#stepsGoal').textContent = '/ ' + fmt(p.steps);
   setVal($('#inSteps'), d.steps != null ? d.steps : '');
-  $('#stepsFill').style.width = clamp((d.steps || 0) / 100, 0, 100) + '%';
+  $('#stepsFill').style.width = clamp((d.steps || 0) / p.steps * 100, 0, 100) + '%';
+
+  /* focus */
+  const ft = [['deep', 'Deep work 60 min', 'Una tarea importante, celular en otro cuarto'], ['agua', 'Agua 3 litros', 'Lleva una botella contigo todo el día'], ['azucar', 'Cero azúcar', 'Sin refrescos, jugos, postres ni pan dulce']].filter(x => T[x[0]]);
+  $('#focusBlock').hidden = !ft.length;
+  $('#focusTasks').innerHTML = ft.map(x => taskBtn(x[0], x[1], x[2], !!d.ck[x[0]])).join('');
 
   /* food summary */
   const e = eatenV(k);
   $('#hoyFood').innerHTML = `
     <div class="macro"><div class="macro-top"><b>Comidas</b><span>${mealsDone(k)} de 5</span></div><div class="tube"><i style="width:${mealsDone(k) / 5 * 100}%"></i></div></div>
-    <div class="macro"><div class="macro-top"><b>Proteína</b><span>${fmt(e[1])} <em>/ 195 g</em></span></div><div class="tube"><i style="width:${clamp(e[1] / TV[1] * 100, 0, 100)}%"></i></div></div>
-    <div class="macro" style="padding-bottom:16px"><div class="macro-top"><b>Calorías</b><span>${fmt(e[0])} <em>/ 2,300</em></span></div><div class="tube"><i style="width:${clamp(e[0] / TV[0] * 100, 0, 100)}%"></i></div></div>`;
+    <div class="macro"><div class="macro-top"><b>Proteína</b><span>${fmt(e[1])} <em>/ ${fmt(TV[1])} g</em></span></div><div class="tube"><i style="width:${clamp(e[1] / TV[1] * 100, 0, 100)}%"></i></div></div>
+    <div class="macro" style="padding-bottom:16px"><div class="macro-top"><b>Calorías</b><span>${fmt(e[0])} <em>/ ${fmt(TV[0])}</em></span></div><div class="tube"><i style="width:${clamp(e[0] / TV[0] * 100, 0, 100)}%"></i></div></div>`;
 
   /* night */
-  $('#sleepMeta').textContent = 'Semana ' + sl.wk + ' · dormir ' + sl.bed;
+  $('#sleepMeta').textContent = sl.label + ' ' + sl.wk + ' · dormir ' + sl.bed;
   $('#nightTasks').innerHTML =
-    taskBtn('celular', 'Celular apagado', 'A las ' + sl.off + ' · fuera del cuarto', !!d.ck.celular) +
-    taskBtn('lectura', 'Leer en la cama', 'Mínimo 15 minutos, sin pantallas', !!d.ck.lectura) +
-    taskBtn('cama', 'En la cama a tiempo', 'Dormir ' + sl.bed + ' · despertar ' + sl.wake, !!d.ck.cama);
+    (T.celular ? taskBtn('celular', 'Celular apagado', 'A las ' + sl.off + ' · fuera del cuarto', !!d.ck.celular) : '') +
+    (T.lectura ? taskBtn('lectura', 'Leer en la cama', 'Mínimo 15 minutos, sin pantallas', !!d.ck.lectura) : '') +
+    (T.cama ? taskBtn('cama', 'En la cama a tiempo', 'Dormir ' + sl.bed + ' · despertar ' + sl.wake, !!d.ck.cama) : '');
+  $('#bookRow').hidden = !T.lectura;
+  $('#nightBlock').hidden = !(T.celular || T.lectura || T.cama);
   const bs = $('#inBook');
   const books = state.config.books.length ? state.config.books : DEFAULT_BOOKS;
   const cur = d.book || books[0];
@@ -1141,9 +1311,12 @@ function renderCloseDay(k) {
 /* ----- progreso ----- */
 function weights() { const out = []; for (let i = 1; i <= N; i++) { const d = state.days[keyN(i)]; if (d && d.w != null) out.push({ n: i, w: +d.w }); } return out; }
 function trendAt(ws, n) { const xs = ws.filter(p => p.n <= n && p.n > n - 7); return xs.length ? xs.reduce((s, p) => s + p.w, 0) / xs.length : null; }
-const ideal = n => state.config.startWeight - (state.config.startWeight - GOAL) * (n - 1) / (N - 1);
+const ideal = n => P().startWeight - (P().startWeight - GOAL) * (n - 1) / (N - 1);
 function renderProgreso() {
-  const ws = weights(), start = state.config.startWeight;
+  const ws = weights(), p = P(), start = p.startWeight, T = p.tasks;
+  $('#progSub').textContent = `${p.name}: ${fmt(start, 1)} → ${fmt(GOAL, 1)} kg en ${N} días. Pésate cada mañana en ayunas; la línea que importa es la tendencia.`;
+  $('#legGoal').textContent = 'Ruta a ' + fmt(GOAL, GOAL % 1 ? 1 : 0);
+  $('#gridTitle').textContent = 'Los ' + N + ' días';
   const last = ws[ws.length - 1];
   const cur = last ? last.w : start;
   const lost = start - cur;
@@ -1154,8 +1327,8 @@ function renderProgreso() {
     <div class="slab kpi"><span class="eyebrow">Peso actual</span><span class="v">${fmt(cur, 1)}<small>kg</small></span><span class="s">${last ? 'Día ' + last.n : 'Sin registros aún'}</span></div>
     <div class="slab kpi"><span class="eyebrow">Bajaste</span><span class="v">${lost >= 0 ? '' : '+'}${fmt(Math.abs(lost), 1)}<small>kg</small></span><span class="s">desde ${fmt(start, 1)} kg</span></div>
     <div class="slab kpi"><span class="eyebrow">Faltan</span><span class="v">${fmt(need, 1)}<small>kg</small></span><span class="s">${fmt(need / daysLeft, 2)} kg por día restante</span></div>
-    <div class="slab kpi"><span class="eyebrow">Tendencia 7 días</span><span class="v">${tr ? fmt(tr, 1) : '—'}<small>${tr ? 'kg' : ''}</small></span><span class="s">${tr && last ? (tr <= ideal(last.n) + 0.3 ? 'En la ruta a 87' : fmt(tr - ideal(last.n), 1) + ' kg arriba de la ruta') : 'Se calcula con tus pesajes'}</span></div>`;
-  $('#chartMeta').textContent = ws.length ? ws.length + ' de 25 pesajes' : 'Registra tu primer peso en Hoy';
+    <div class="slab kpi"><span class="eyebrow">Tendencia 7 días</span><span class="v">${tr ? fmt(tr, 1) : '—'}<small>${tr ? 'kg' : ''}</small></span><span class="s">${tr && last ? (tr <= ideal(last.n) + 0.3 ? 'En la ruta a ' + fmt(GOAL, GOAL % 1 ? 1 : 0) : fmt(tr - ideal(last.n), 1) + ' kg arriba de la ruta') : 'Se calcula con tus pesajes'}</span></div>`;
+  $('#chartMeta').textContent = ws.length ? ws.length + ' de ' + N + ' pesajes' : 'Registra tu primer peso en Hoy';
   $('#chart').innerHTML = chartSVG(ws);
   const g = [];
   for (let i = 1; i <= N; i++) {
@@ -1164,44 +1337,46 @@ function renderProgreso() {
     g.push(`<button type="button" class="cell${i === sel ? ' is-sel' : ''}${fut ? ' is-future' : ''}" data-day="${i}" style="${bg ? 'background:' + bg + ';' : ''}${sc >= 0.8 ? 'color:#050505' : sc > 0 ? 'color:#f4f4f1' : ''}" aria-label="Día ${i}, ${Math.round(sc * 100)}%">${i}</button>`);
   }
   $('#grid25').innerHTML = g.join('');
+  $('#grid25').style.gridTemplateColumns = `repeat(${N === 7 ? 7 : 5},minmax(0,1fr))`;
   const upto = clamp(TN, 0, N);
-  if (upto === 0) { $('#stats').innerHTML = '<p class="note" style="padding:0 18px 14px">Los conteos arrancan el sábado 10 de octubre.</p>'; return; }
+  if (upto === 0) { $('#stats').innerHTML = `<p class="note" style="padding:0 18px 14px">Los conteos arrancan el ${dateLabel(START).toLowerCase()}.</p>`; return; }
   const sAt = i => state.days[keyN(i)] ? score(keyN(i)) : 0;
   let streak = 0; for (let i = upto; i >= 1; i--) { if (sAt(i) >= 0.8) streak++; else if (i === upto) continue; else break; }
   let best = 0, run = 0; for (let i = 1; i <= upto; i++) { if (sAt(i) >= 0.8) { run++; best = Math.max(best, run); } else run = 0; }
-  let gymDone = 0, gymPlan = 0, cinta = 0, pasos = 0, prot = 0, cama = 0, lect = 0, fotos = 0;
+  let gymDone = 0, gymPlan = 0, pasos = 0, prot = 0, fotos = 0; const ckc = {};
   for (let i = 1; i <= upto; i++) {
     const k = keyN(i), d = state.days[k];
     if (isGym(k)) gymPlan++;
     if (!d) continue;
     if (d.ck && d.ck.pesas) gymDone++;
-    if (d.ck && d.ck.cinta) cinta++;
-    if ((d.steps || 0) >= 10000) pasos++;
+    for (const x of ['cinta', 'agua', 'azucar', 'deep', 'celular', 'lectura', 'cama']) if (d.ck && d.ck[x]) ckc[x] = (ckc[x] || 0) + 1;
+    if ((d.steps || 0) >= p.steps) pasos++;
     if (eatenV(k)[1] >= TV[1] - 5) prot++;
-    if (d.ck && d.ck.cama) cama++;
-    if (d.ck && d.ck.lectura) lect++;
     if (photoSrc(k)) fotos++;
   }
   const den = upto;
   const row = (a, b) => `<div class="stat"><span>${a}</span><b>${b}</b></div>`;
+  const of = x => (ckc[x] || 0) + ' de ' + den;
   $('#stats').innerHTML =
     row('Racha actual (días al 80%+)', streak) + row('Mejor racha', best) +
-    row('Pesas', gymDone + ' de ' + gymPlan) + row('Caminadora 30 min', cinta + ' de ' + den) +
-    row('10,000 pasos', pasos + ' de ' + den) + row('Proteína cumplida', prot + ' de ' + den) +
-    row('Fotos', fotos + ' de ' + den) + row('Lectura en la cama', lect + ' de ' + den) + row('Dormir a tiempo', cama + ' de ' + den);
+    (T.pesas ? row('Pesas', gymDone + ' de ' + gymPlan) : '') + (T.cinta ? row('Caminadora ' + p.cinta + ' min', of('cinta')) : '') +
+    (T.pasos ? row(fmt(p.steps) + ' pasos', pasos + ' de ' + den) : '') + row('Proteína cumplida', prot + ' de ' + den) + row('Fotos', fotos + ' de ' + den) +
+    (T.deep ? row('Deep work', of('deep')) : '') + (T.agua ? row('Agua 3 L', of('agua')) : '') + (T.azucar ? row('Cero azúcar', of('azucar')) : '') +
+    (T.celular ? row('Celular apagado', of('celular')) : '') + (T.lectura ? row('Lectura en la cama', of('lectura')) : '') + (T.cama ? row('Dormir a tiempo', of('cama')) : '');
 }
 function chartSVG(ws) {
   const W = 340, H = 210, L = 34, R = 12, Tp = 12, B = 26;
-  const vals = ws.map(p => p.w).concat([state.config.startWeight, GOAL]);
+  const vals = ws.map(p => p.w).concat([P().startWeight, GOAL]);
   const lo = Math.floor(Math.min(...vals) - 0.5), hi = Math.ceil(Math.max(...vals) + 0.5);
   const x = n => L + (n - 1) / (N - 1) * (W - L - R);
   const y = v => Tp + (hi - v) / (hi - lo) * (H - Tp - B);
-  let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Peso por día contra la ruta a 87 kg">
+  let s = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Peso por día contra la ruta a la meta">
     <defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f4f1" stop-opacity=".22"/><stop offset="1" stop-color="#f4f4f1" stop-opacity="0"/></linearGradient></defs>`;
   for (let v = lo; v <= hi; v++) s += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="#f4f4f1" stroke-opacity="${v === GOAL ? .28 : .06}" stroke-width="1"/><text x="${L - 6}" y="${y(v) + 3}" text-anchor="end">${v}</text>`;
-  for (const n of [1, 5, 10, 15, 20, 25]) s += `<text x="${x(n)}" y="${H - 8}" text-anchor="middle">${n}</text>`;
-  s += `<line x1="${x(1)}" y1="${y(state.config.startWeight)}" x2="${x(N)}" y2="${y(GOAL)}" stroke="#f4f4f1" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 5"/>`;
-  s += `<text x="${x(N)}" y="${y(GOAL) - 7}" text-anchor="end" style="fill:#f4f4f1">87</text>`;
+  const ticks = N <= 10 ? Array.from({ length: N }, (_, i) => i + 1) : [...new Set([1, ...Array.from({ length: Math.floor(N / 5) }, (_, i) => (i + 1) * 5), N])];
+  for (const n of ticks) s += `<text x="${x(n)}" y="${H - 8}" text-anchor="middle">${n}</text>`;
+  s += `<line x1="${x(1)}" y1="${y(P().startWeight)}" x2="${x(N)}" y2="${y(GOAL)}" stroke="#f4f4f1" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 5"/>`;
+  s += `<text x="${x(N)}" y="${y(GOAL) - 7}" text-anchor="end" style="fill:#f4f4f1">${fmt(GOAL, GOAL % 1 ? 1 : 0)}</text>`;
   if (TN >= 1 && TN <= N) s += `<line x1="${x(TN)}" x2="${x(TN)}" y1="${Tp}" y2="${H - B}" stroke="#f4f4f1" stroke-opacity=".12"/>`;
   if (ws.length) {
     const pts = ws.map(p => `${x(p.n).toFixed(1)},${y(p.w).toFixed(1)}`).join(' ');
@@ -1229,7 +1404,7 @@ function renderDiario() {
       <input type="range" min="0" max="100" value="50" id="cmpRange" aria-label="Comparar día ${a.n} con día ${z.n}"></div>`;
   } else {
     cb.innerHTML = `<div class="block-h"><span class="eyebrow">Antes / Ahora</span></div><div class="empty" style="padding-top:0"><b>Aparece con tu segunda foto</b>
-      <p>Toma la del día 1 mañana en ayunas, de frente y de lado. El día 25 pones las dos lado a lado aquí.</p></div>`;
+      <p>Toma la del día 1 en ayunas, de frente y de lado. El día ${N} pones las dos lado a lado aquí.</p></div>`;
   }
   const items = [];
   for (let i = Math.min(N, Math.max(TN, 1)); i >= 1; i--) {
@@ -1252,11 +1427,32 @@ function renderDiario() {
 
 /* ----- plan ----- */
 function renderPlan() {
-  const c = state.config;
-  if (!(document.activeElement && document.activeElement.id === 'inStart')) $('#goalBox').innerHTML = `<span class="eyebrow">Objetivo · 10 oct — 3 nov</span>
-    <div style="display:flex;align-items:baseline;flex-wrap:wrap"><span class="x3d">${fmt(c.startWeight, 0)}</span><span class="goal-arrow">→</span><span class="x3d">87</span><span class="goal-arrow" style="font-size:14px">kg</span></div>
-    <p class="note">Perder la mayor cantidad de grasa posible sin perder músculo. 5 kg en 25 días es agresivo: la báscula puede marcarlo (parte es agua y glucógeno), pero de grasa real espera unos 2.5 a 3.5 kg. Juzga con la tendencia de 7 días.</p>
-    <div class="row-field" style="padding:0;border:0"><label for="inStart">Peso inicial</label><div class="field"><input id="inStart" type="number" inputmode="decimal" step="0.1" value="${c.startWeight}"><span>kg</span></div></div>`;
+  const c = state.config, p = P(), T = p.tasks, st = projStatus(p);
+  $('#planSub').textContent = `Las reglas de ${p.name}. Lo que cambies aquí se aplica en toda la app.`;
+  $('#projBox').innerHTML = `<div class="block-h"><span class="eyebrow">Reto activo</span><button class="link" type="button" data-act="projects">Cambiar o crear →</button></div>
+    <div class="pad"><div class="proj-row is-active"><div><b>${esc(p.name)}</b><small>${N} días · ${projRange(p)} · ${st.txt}</small></div><button type="button" class="key key-dark small" data-act="edit-proj">Editar</button></div></div>`;
+  const diff = p.startWeight - GOAL, ex = p.mode === 'express';
+  const fatLo = round1(N * (ex ? 0.12 : 0.1)), fatHi = round1(N * (ex ? 0.16 : 0.14));
+  const focusEl = document.activeElement && (document.activeElement.id === 'inStart' || document.activeElement.id === 'inGoal');
+  if (!focusEl) $('#goalBox').innerHTML = `<span class="eyebrow">Objetivo · ${projRange(p)}</span>
+    <div style="display:flex;align-items:baseline;flex-wrap:wrap"><span class="x3d">${fmt(p.startWeight, p.startWeight % 1 ? 1 : 0)}</span><span class="goal-arrow">→</span><span class="x3d">${fmt(GOAL, GOAL % 1 ? 1 : 0)}</span><span class="goal-arrow" style="font-size:14px">kg</span></div>
+    <p class="note">${diff > 0 ? `Bajar ${fmt(diff, 1)} kg en ${N} días sin perder músculo. ` : ''}${ex
+      ? 'En un reto corto lo primero que baja la báscula es agua y glucógeno (menos carbos y menos sal); '
+      : 'La báscula sube y baja con el agua; '}de grasa real espera más o menos ${fmt(fatLo, 1)} a ${fmt(fatHi, 1)} kg. La proteína alta es lo que protege el músculo, no la saltes.</p>
+    <div class="two"><div class="mini"><span>Peso inicial (kg)</span><input id="inStart" type="number" inputmode="decimal" step="0.1" value="${p.startWeight}"></div><div class="mini"><span>Meta (kg)</span><input id="inGoal" type="number" inputmode="decimal" step="0.1" value="${GOAL}"></div></div>`;
+  const rules = [];
+  if (T.pesas) rules.push(['Pesas intensas', c.gymDays.length + ' días por semana']);
+  if (T.cinta) rules.push(['Caminadora inclinada', p.cinta + ' min diarios']);
+  if (T.pasos) rules.push(['Pasos', fmt(p.steps) + ' diarios']);
+  rules.push(['Báscula y foto', 'Diario, en ayunas']);
+  rules.push(['Macros', `${fmt(TV[0])} kcal · ${TV[1]} P · ${TV[2]} C · ${TV[3]} G`]);
+  rules.push(['Arroz por plato', riceTxt(p.rice).replace(' de arroz', '')]);
+  if (T.deep) rules.push(['Deep work', '60 min sin celular']);
+  if (T.agua) rules.push(['Agua', '3 litros diarios']);
+  if (T.azucar) rules.push(['Azúcar', 'Cero refrescos, jugos y postres']);
+  if (T.celular) rules.push(['Celular apagado', 'Antes de dormir, fuera del cuarto']);
+  if (T.lectura) rules.push(['Lectura', 'Libro en la cama']);
+  $('#rulesList').innerHTML = rules.map(r => `<li><span>${esc(r[0])}</span><b>${esc(r[1])}</b></li>`).join('');
   $('#gymDays').innerHTML = [1, 2, 3, 4, 5, 6, 0].map(i => `<button type="button" class="chip" data-gym="${i}" aria-pressed="${c.gymDays.includes(i)}">${WDS[i]}</button>`).join('');
   $('#gymCount').textContent = c.gymDays.length + ' de 5 días';
   const rows = [];
@@ -1266,10 +1462,12 @@ function renderPlan() {
   rows.push(`<tr><td><b>4 · Pre-entreno</b><br><span style="color:var(--muted)">Se calcula cada día para cuadrar tus macros</span></td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td></tr>`);
   for (const x in SLOT.cena.opts) rows.push(tr('5 · Cena', SLOT.cena.opts[x].d, SLOT.cena.opts[x]));
   $('#mealTable').innerHTML = `<table><thead><tr><th>Comida</th><th class="n">kcal</th><th class="n">P</th><th class="n">C</th><th class="n">G</th></tr></thead><tbody>${rows.join('')}</tbody></table>`;
-  const ph = [1, 8, 15, 22].map(n => sleepFor(n));
+  const { stepLen, nSteps } = sleepSteps(p);
+  const ph = Array.from({ length: nSteps }, (_, i) => sleepFor(i * stepLen + 1));
+  $('#sleepPlanMeta').textContent = p.sleepFrom === p.sleepTo ? '8 horas' : '8 horas, bajando gradual';
   const curWk = sleepFor(sel).wk;
   $('#sleepTable').innerHTML = `<table><thead><tr><th>Días</th><th class="n">Celular</th><th class="n">Dormir</th><th class="n">Despertar</th></tr></thead><tbody>${ph.map(s =>
-    `<tr class="${s.wk === curWk ? 'is-now' : ''}"><td>${s.from}–${s.to}<br><span style="color:var(--muted);font-size:12px">${dateLabel(keyN(s.from))} – ${dateLabel(keyN(s.to))}</span></td><td class="n">${s.off}</td><td class="n">${s.bed}</td><td class="n">${s.wake}</td></tr>`).join('')}</tbody></table>`;
+    `<tr class="${s.wk === curWk ? 'is-now' : ''}"><td>${s.from === s.to ? 'Día ' + s.from : s.from + '–' + s.to}<br><span style="color:var(--muted);font-size:12px">${s.from === s.to ? dateLabel(keyN(s.from)) : dateLabel(keyN(s.from)) + ' – ' + dateLabel(keyN(s.to))}</span></td><td class="n">${s.off}</td><td class="n">${s.bed}</td><td class="n">${s.wake}</td></tr>`).join('')}</tbody></table>`;
   $('#bookList').innerHTML = c.books.map((b, i) => `<button type="button" class="chip" data-delbook="${i}" aria-label="Quitar ${esc(b)}">${esc(b)} ×</button>`).join('');
   $('#pantry').innerHTML = Object.keys(FOODS).filter(id => id !== 'wheyhalf').map(id => `<button type="button" class="chip" data-pantry="${id}" aria-pressed="${!!c.pantry[id]}">${esc(FOODS[id].n)}</button>`).join('');
   renderData();
@@ -1286,7 +1484,8 @@ function goTab(t) {
 function setDay(n) { sel = clamp(n, 1, N); render(); }
 
 document.addEventListener('click', ev => {
-  const t = ev.target.closest('button, [data-goto]'); if (!t) return;
+  const t = ev.target.closest('button, [data-goto], [data-act]'); if (!t) return;
+  if (sheetClick(t)) return;
   const k = keyN(sel), d = D(k);
   if (t.dataset.tab) return goTab(t.dataset.tab);
   if (t.dataset.act === 'prev') return setDay(sel - 1);
@@ -1309,10 +1508,10 @@ document.addEventListener('click', ev => {
     if (t.dataset.meal === 'pre') {
       if (m.d) { m.d = false; m.items = null; }
       else { m.items = preChosen(k).map(x => x.slice()); m.d = true; }
-    } else m.d = !m.d;
+    } else { m.d = !m.d; if (m.d) m.m = optM(k, t.dataset.meal); else delete m.m; }
     save(k); return render();
   }
-  if (t.dataset.opt) { const [s, o] = t.dataset.opt.split(':'); d.meals[s].o = o; save(k); return render(); }
+  if (t.dataset.opt) { const [s, o] = t.dataset.opt.split(':'); d.meals[s].o = o; if (d.meals[s].d) d.meals[s].m = optM(k, s); save(k); return render(); }
   if (t.dataset.prei != null) { ui.preChoice[k] = +t.dataset.prei; return render(); }
   if (t.dataset.addcombo) {
     const items = JSON.parse(t.dataset.addcombo);
@@ -1348,18 +1547,180 @@ $('#inWeight').addEventListener('change', e => {
   save(k); render();
 });
 $('#inSteps').addEventListener('change', e => { const k = keyN(sel); const v = parseInt(e.target.value, 10); D(k).steps = isFinite(v) && v >= 0 ? v : null; save(k); render(); });
-$('#inSteps').addEventListener('input', e => { $('#stepsFill').style.width = clamp((+e.target.value || 0) / 100, 0, 100) + '%'; });
+$('#inSteps').addEventListener('input', e => { $('#stepsFill').style.width = clamp((+e.target.value || 0) / P().steps * 100, 0, 100) + '%'; });
 $('#inBook').addEventListener('change', e => { const k = keyN(sel); D(k).book = e.target.value; save(k); });
 let noteT = null;
 $('#inNote').addEventListener('input', e => { const k = keyN(sel); D(k).note = e.target.value; clearTimeout(noteT); noteT = setTimeout(() => save(k), 600); });
 $('#inPhoto').addEventListener('change', e => { const f = e.target.files && e.target.files[0]; e.target.value = ''; onPhoto(f); });
 $('#inImport').addEventListener('change', e => { const f = e.target.files && e.target.files[0]; e.target.value = ''; if (f) readImport(f); });
 document.addEventListener('change', e => {
-  if (e.target.id === 'inStart') { const v = parseFloat(e.target.value); if (isFinite(v) && v > 40 && v < 250) { state.config.startWeight = Math.round(v * 10) / 10; saveCfg(); render(); } }
+  if (e.target.id === 'inStart' || e.target.id === 'inGoal') { const v = parseFloat(String(e.target.value).replace(',', '.')); if (isFinite(v) && v > 40 && v < 250) { P()[e.target.id === 'inStart' ? 'startWeight' : 'goal'] = round1(v); syncProject(); saveCfg(); render(); } }
 });
 document.addEventListener('input', e => {
   if (e.target.id === 'cmpRange') $('#cmp').style.setProperty('--cut', e.target.value + '%');
 });
+
+/* ================= retos: list + form sheet ================= */
+const sheet = { view: 'list', form: null, confirmDel: false };
+function applyProject() {
+  syncProject();
+  sel = clamp(TN, 1, N);
+  memo.clear(); ui.preChoice = {};
+}
+function latestWeight() {
+  const ks = Object.keys(state.days).filter(k => state.days[k] && state.days[k].w != null).sort();
+  return ks.length ? +state.days[ks[ks.length - 1]].w : P().startWeight;
+}
+function newForm(mode) {
+  const pre = PRESETS[mode], sw = latestWeight();
+  return { id: null, mode, name: pre.name, nameTouched: false, len: 5, startOff: 0, startWeight: sw, goal: round1(sw - pre.rate * 5), goalTouched: false,
+    macros: pre.macros.slice(), rice: pre.rice, steps: pre.steps, cinta: pre.cinta, sleepFrom: pre.sleepFrom, sleepTo: pre.sleepTo, tasks: Object.assign({}, pre.tasks) };
+}
+function formFrom(p) {
+  return { id: p.id, mode: p.mode, name: p.name, nameTouched: true, len: p.len, start: p.start, startWeight: p.startWeight, goal: p.goal, goalTouched: true,
+    macros: p.macros.slice(), rice: p.rice, steps: p.steps, cinta: p.cinta, sleepFrom: p.sleepFrom, sleepTo: p.sleepTo, tasks: Object.assign({}, p.tasks) };
+}
+function openSheet(view, id) {
+  sheet.view = view; sheet.confirmDel = false;
+  sheet.form = view === 'form' ? (id ? formFrom(state.config.projects.find(p => p.id === id) || P()) : newForm('express')) : null;
+  $('#sheet').hidden = false; document.body.classList.add('lock');
+  renderSheet(); $('#sheetPanel').scrollTop = 0;
+}
+function closeSheet() { $('#sheet').hidden = true; document.body.classList.remove('lock'); sheet.form = null; }
+function formStart(f) { return f.id ? f.start : addDays(TODAY, f.startOff || 0); }
+function renderSheet() {
+  const body = $('#sheetBody');
+  if (sheet.view === 'list') {
+    $('#sheetTitle').textContent = 'Tus retos';
+    const act = state.config.active;
+    const list = state.config.projects.slice().sort((a, b) => (b.id === act) - (a.id === act) || (b.start > a.start ? 1 : -1));
+    body.innerHTML = `<div class="form"><div class="proj-list">${list.map(p => {
+      const st = projStatus(p), on = p.id === act;
+      return `<div class="proj-row${on ? ' is-active' : ''}"><div><b>${esc(p.name)}</b><small>${p.len} días · ${projRange(p)} · ${st.txt}${on ? ' · activo' : ''}</small></div>${on
+        ? `<button type="button" class="key key-dark small" data-act="edit-proj" data-id="${esc(p.id)}">Editar</button>`
+        : `<button type="button" class="key key-white small" data-use="${esc(p.id)}">Usar</button>`}</div>`;
+    }).join('')}</div>
+    <p class="note">Tus pesos, fotos y comidas son los mismos en todos los retos: cada reto solo cambia las reglas, las metas y las fechas.</p>
+    <div class="form-actions"><button type="button" class="key key-white" data-act="new-proj">Nuevo reto</button></div></div>`;
+    return;
+  }
+  const f = sheet.form, editing = !!f.id;
+  $('#sheetTitle').textContent = editing ? 'Editar reto' : 'Nuevo reto';
+  const pr = (cond) => cond ? 'true' : 'false';
+  const sel1 = (opts, v, lab) => opts.map(o => `<option value="${o}"${o === v ? ' selected' : ''}>${lab(o)}</option>`).join('');
+  const startBlock = editing
+    ? `<p class="note">Empezó el ${dateLabel(f.start).toLowerCase()}. La fecha de inicio no cambia.</p>`
+    : `<div class="seg" style="--cols:2">${[0, 1].map(o => `<button type="button" class="chip" data-fstart="${o}" aria-pressed="${pr((f.startOff || 0) === o)}"><b>${o ? 'Mañana' : 'Hoy'}</b><small>${dateLabel(addDays(TODAY, o))}</small></button>`).join('')}</div>`;
+  const others = state.config.projects.length > 1;
+  body.innerHTML = `<div class="form">
+    <div class="fgroup"><label class="flabel" for="fName">Nombre del reto</label><div class="field"><input id="fName" class="text" maxlength="40" autocomplete="off" value="${esc(f.name)}"></div></div>
+    <div class="fgroup"><span class="flabel">Modo</span><div class="seg wide" style="--cols:2">
+      <button type="button" class="chip" data-fmode="express" aria-pressed="${pr(f.mode === 'express')}"><b>Express</b><small>Bajar rápido · full focus</small></button>
+      <button type="button" class="chip" data-fmode="constante" aria-pressed="${pr(f.mode === 'constante')}"><b>Constante</b><small>Ritmo sostenible</small></button></div></div>
+    <div class="fgroup"><span class="flabel">Duración</span><div class="seg" style="--cols:5">${LENS.map(l => `<button type="button" class="chip" data-flen="${l}" aria-pressed="${pr(f.len === l)}"><b>${l}</b><small>días</small></button>`).join('')}</div></div>
+    <div class="fgroup"><span class="flabel">Empieza</span>${startBlock}</div>
+    <div class="fgroup"><span class="flabel">Peso</span><div class="two">
+      <label class="mini"><span>Inicio (kg)</span><input id="fStartW" type="number" inputmode="decimal" step="0.1" value="${f.startWeight}"></label>
+      <label class="mini"><span>Meta (kg)</span><input id="fGoal" type="number" inputmode="decimal" step="0.1" value="${f.goal}"></label></div></div>
+    <div class="fgroup"><span class="flabel">Macros diarios</span><div class="mac4">
+      ${['kcal', 'Proteína', 'Carbos', 'Grasa'].map((lab, i) => `<label class="mini"><span>${lab}</span><input id="fM${i}" type="number" inputmode="numeric" step="1" value="${f.macros[i]}"></label>`).join('')}</div></div>
+    <div class="fgroup"><span class="flabel">Arroz por plato</span><div class="seg" style="--cols:3">${RICES.map(r => `<button type="button" class="chip" data-frice="${r}" aria-pressed="${pr(f.rice === r)}"><b>${r === 0.5 ? '½' : r === 0.75 ? '¾' : '1'}</b><small>taza</small></button>`).join('')}</div></div>
+    <div class="fgroup"><span class="flabel">Hábitos que cuentan</span><div class="chips">${TASKS.map(x => `<button type="button" class="chip" data-ftask="${x.k}" aria-pressed="${pr(!!f.tasks[x.k])}">${esc(x.t)}</button>`).join('')}</div>
+      <p class="note">Báscula, foto y comidas siempre cuentan.</p></div>
+    <div class="fgroup"><span class="flabel">Movimiento</span><div class="two">
+      <label class="mini"><span>Pasos al día</span><select id="fSteps">${sel1(STEP_OPTS.includes(f.steps) ? STEP_OPTS : STEP_OPTS.concat(f.steps), f.steps, v => fmt(v))}</select></label>
+      <label class="mini"><span>Caminadora</span><select id="fCinta">${sel1(CINTA_OPTS.includes(f.cinta) ? CINTA_OPTS : CINTA_OPTS.concat(f.cinta), f.cinta, v => v + ' min')}</select></label></div></div>
+    <div class="fgroup"><span class="flabel">Sueño · 8 horas</span><div class="two">
+      <label class="mini"><span>Empiezas durmiendo</span><select id="fSleepFrom">${sel1(SLEEP_OPTS, f.sleepFrom, hm)}</select></label>
+      <label class="mini"><span>Terminas durmiendo</span><select id="fSleepTo">${sel1(SLEEP_OPTS, f.sleepTo, hm)}</select></label></div></div>
+    <div class="preview" id="fPreview"></div>
+    <div class="form-actions">
+      <button type="button" class="key key-white" data-act="save-proj">${editing ? 'Guardar cambios' : 'Empezar reto'}</button>
+      ${editing && others ? (sheet.confirmDel
+        ? `<div class="confirm"><p class="why">¿Borrar <b>${esc(f.name)}</b>? Tus pesos, fotos y comidas se quedan; solo se quita este reto.</p><div class="data-btns"><button type="button" class="key key-white small" data-act="del-ok">Borrar reto</button><button type="button" class="key key-dark small" data-act="del-no">Cancelar</button></div></div>`
+        : `<button type="button" class="key key-dark" data-act="del-proj">Borrar reto</button>`) : ''}
+    </div></div>`;
+  renderPreview();
+}
+function renderPreview() {
+  const f = sheet.form, el = $('#fPreview'); if (!f || !el) return;
+  const start = formStart(f), end = addDays(start, f.len - 1);
+  const sw = +f.startWeight || 0, g = +f.goal || 0, diff = sw - g;
+  const sum = Math.round((+f.macros[1] || 0) * 4 + (+f.macros[2] || 0) * 4 + (+f.macros[3] || 0) * 9);
+  const nOn = TASKS.filter(x => f.tasks[x.k]).length;
+  el.innerHTML = `<b>${esc((f.name || '').trim() || PRESETS[f.mode].name)} · ${f.len} días</b>
+    <p>${dateLabel(start)} – ${dateLabel(end)}</p>
+    <p>${fmt(sw, 1)} → ${fmt(g, 1)} kg (${diff >= 0 ? '−' : '+'}${fmt(Math.abs(diff), 1)} kg)</p>
+    <p>${fmt(+f.macros[0] || 0)} kcal · ${fmt(+f.macros[1] || 0)} P · ${fmt(+f.macros[2] || 0)} C · ${fmt(+f.macros[3] || 0)} G · ${riceTxt(f.rice)} por plato</p>
+    <p>Dormir ${hm(f.sleepFrom)} → ${hm(f.sleepTo)} · ${nOn} hábitos + báscula, foto y comidas</p>
+    ${f.macros[0] > 0 && Math.abs(sum - f.macros[0]) > 60 ? `<p class="warn">Ojo: tus gramos suman ${fmt(sum)} kcal, no ${fmt(+f.macros[0])}.</p>` : ''}
+    ${f.len > 0 && diff / f.len > 0.25 ? '<p class="warn">Ojo: más de 250 g por día es muy agresivo; casi todo sería agua.</p>' : ''}`;
+}
+function presetInto(f, mode) {
+  const pre = PRESETS[mode]; f.mode = mode;
+  Object.assign(f, { macros: pre.macros.slice(), rice: pre.rice, steps: pre.steps, cinta: pre.cinta, sleepFrom: pre.sleepFrom, sleepTo: pre.sleepTo, tasks: Object.assign({}, pre.tasks) });
+  if (!f.nameTouched) f.name = pre.name;
+  if (!f.goalTouched) f.goal = round1(f.startWeight - pre.rate * f.len);
+}
+function saveProject() {
+  const f = sheet.form; if (!f) return;
+  const sw = +f.startWeight, g = +f.goal;
+  if (!(sw > 30 && sw < 300) || !(g > 30 && g < 300)) { toast('Revisa tu peso de inicio y tu meta.'); return; }
+  if (!f.macros.every(x => +x > 0)) { toast('Llena las calorías y los gramos de P, C y G.'); return; }
+  const p = normalizeProject({ id: f.id || ('p' + Date.now().toString(36)), name: f.name, mode: f.mode, len: f.len, start: formStart(f), startWeight: sw, goal: g,
+    macros: f.macros.map(Number), rice: f.rice, steps: f.steps, cinta: f.cinta, sleepFrom: f.sleepFrom, sleepTo: f.sleepTo, tasks: f.tasks });
+  const list = state.config.projects, i = list.findIndex(x => x.id === p.id);
+  if (i >= 0) list[i] = p; else list.push(p);
+  state.config.active = p.id;
+  saveCfg(); applyProject(); closeSheet(); goTab('hoy');
+  toast(i >= 0 ? 'Cambios guardados' : `${p.name}: ${TN >= 1 ? 'día 1 de ' + p.len : 'empieza mañana'}`);
+}
+function useProject(id) {
+  const p = state.config.projects.find(x => x.id === id); if (!p) return;
+  state.config.active = id; saveCfg(); applyProject(); closeSheet(); goTab('hoy'); toast('Reto activo: ' + p.name);
+}
+function deleteProject() {
+  const f = sheet.form; if (!f || !f.id || state.config.projects.length < 2) return;
+  const list = state.config.projects.filter(x => x.id !== f.id);
+  state.config.projects = list;
+  if (state.config.active === f.id) state.config.active = (list.find(x => projStatus(x).s === 'live') || list[0]).id;
+  saveCfg(); applyProject(); closeSheet(); goTab('hoy'); toast('Reto borrado. Tus datos se quedan.');
+}
+function sheetClick(t) {
+  const a = t.dataset.act, f = sheet.form;
+  if (a === 'projects') { openSheet('list'); return true; }
+  if (a === 'new-proj') { openSheet('form'); return true; }
+  if (a === 'edit-proj') { openSheet('form', t.dataset.id || P().id); return true; }
+  if (a === 'sheet-close') { closeSheet(); return true; }
+  if (a === 'save-proj') { saveProject(); return true; }
+  if (a === 'del-proj') { sheet.confirmDel = true; renderSheet(); return true; }
+  if (a === 'del-no') { sheet.confirmDel = false; renderSheet(); return true; }
+  if (a === 'del-ok') { deleteProject(); return true; }
+  if (t.dataset.use) { useProject(t.dataset.use); return true; }
+  if (!f) return false;
+  if (t.dataset.fmode) { presetInto(f, t.dataset.fmode); renderSheet(); return true; }
+  if (t.dataset.flen) { f.len = +t.dataset.flen; if (!f.goalTouched) f.goal = round1(f.startWeight - PRESETS[f.mode].rate * f.len); renderSheet(); return true; }
+  if (t.dataset.fstart != null) { f.startOff = +t.dataset.fstart; renderSheet(); return true; }
+  if (t.dataset.frice) { f.rice = +t.dataset.frice; renderSheet(); return true; }
+  if (t.dataset.ftask) { f.tasks[t.dataset.ftask] = !f.tasks[t.dataset.ftask]; renderSheet(); return true; }
+  return false;
+}
+document.addEventListener('input', e => {
+  const f = sheet.form; if (!f) return;
+  const id = e.target.id, v = e.target.value, num = parseFloat(String(v).replace(',', '.'));
+  if (id === 'fName') { f.name = v; f.nameTouched = true; }
+  else if (id === 'fStartW') { f.startWeight = num; if (!f.goalTouched && isFinite(num)) { f.goal = round1(num - PRESETS[f.mode].rate * f.len); const g = $('#fGoal'); if (g) g.value = f.goal; } }
+  else if (id === 'fGoal') { f.goal = num; f.goalTouched = true; }
+  else if (/^fM[0-3]$/.test(id)) f.macros[+id[2]] = num;
+  else return;
+  renderPreview();
+});
+document.addEventListener('change', e => {
+  const f = sheet.form; if (!f) return;
+  const map = { fSteps: 'steps', fCinta: 'cinta', fSleepFrom: 'sleepFrom', fSleepTo: 'sleepTo' };
+  if (map[e.target.id]) { f[map[e.target.id]] = +e.target.value; renderPreview(); }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#sheet').hidden) closeSheet(); });
 
 /* ================= install + date rollover ================= */
 const isStandalone = () => (window.matchMedia && matchMedia('(display-mode: standalone)').matches) || navigator.standalone === true;
@@ -1407,7 +1768,7 @@ if (!reduce && matchMedia('(hover: hover) and (pointer: fine)').matches) {
   document.addEventListener('pointerout', e => { const el = e.target.closest('.meal, .kpi, .entry, .big-goal'); if (el && !el.contains(e.relatedTarget)) el.style.transform = ''; });
 }
 
-/* ================= 3D mala (25 beads) ================= */
+/* ================= 3D mala (one bead per day of the reto) ================= */
 const mala = (() => {
   const api = { update() {}, setActive() {} };
   const canvas = $('#malaCanvas'), wrap = $('#mala');
@@ -1442,14 +1803,19 @@ const mala = (() => {
   const R = 1.8;
   const tiltG = new THREE.Group(); tiltG.rotation.x = -1.02; tiltG.position.y = 0.42; scene.add(tiltG);
   const spin = new THREE.Group(); tiltG.add(spin);
-  const beadGeo = new THREE.SphereGeometry(0.175, 40, 28);
-  const beads = [];
-  for (let i = 0; i < N; i++) {
-    const a = -Math.PI / 2 + (i + 1) * (2 * Math.PI / (N + 1));
-    const mat = new THREE.MeshPhysicalMaterial({ color: 0x0c0c0c, roughness: 0.24, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.1, envMapIntensity: 1.1 });
-    const b = new THREE.Mesh(beadGeo, mat); b.position.set(Math.cos(a) * R, Math.sin(a) * R, 0); b.userData.n = i + 1;
-    spin.add(b); beads.push(b);
+  const beads = []; let beadGeo = null;
+  function buildBeads() {
+    for (const b of beads) { spin.remove(b); b.material.dispose(); }
+    beads.length = 0; if (beadGeo) beadGeo.dispose();
+    beadGeo = new THREE.SphereGeometry(Math.min(0.3, 0.4 * 2 * Math.PI * R / (N + 1)), 40, 28);
+    for (let i = 0; i < N; i++) {
+      const a = -Math.PI / 2 + (i + 1) * (2 * Math.PI / (N + 1));
+      const mat = new THREE.MeshPhysicalMaterial({ color: 0x0c0c0c, roughness: 0.24, metalness: 0, clearcoat: 1, clearcoatRoughness: 0.1, envMapIntensity: 1.1 });
+      const b = new THREE.Mesh(beadGeo, mat); b.position.set(Math.cos(a) * R, Math.sin(a) * R, 0); b.userData.n = i + 1;
+      spin.add(b); beads.push(b);
+    }
   }
+  buildBeads();
   const guru = new THREE.Mesh(new THREE.SphereGeometry(0.28, 48, 32), new THREE.MeshPhysicalMaterial({ color: 0xe8e8e4, roughness: 0.3, clearcoat: 0.8, clearcoatRoughness: 0.2 }));
   guru.position.set(0, -R, 0); spin.add(guru);
   const tassel = new THREE.Mesh(new THREE.ConeGeometry(0.17, 0.62, 32, 1, true), new THREE.MeshStandardMaterial({ color: 0x8a8a86, roughness: 0.85, side: THREE.DoubleSide }));
@@ -1459,6 +1825,7 @@ const mala = (() => {
 
   const white = new THREE.Color(0xf1f1ed), black = new THREE.Color(0x0c0c0c), dead = new THREE.Color(0x060606);
   api.update = () => {
+    if (beads.length !== N) buildBeads();
     beads.forEach(b => {
       const n = b.userData.n, k = keyN(n), sc = state.days[k] ? score(k) : 0;
       const m = b.material;
@@ -1517,10 +1884,6 @@ const mala = (() => {
 /* ================= splash ================= */
 (function splash() {
   const sp = $('#splash'), sc = $('#scene'), lyT = $('#lyText'), lyS = $('#lyStatue');
-  const n = clamp(TN, 1, N);
-  $('#spDay').textContent = pad(n);
-  $('#spEyebrow').textContent = TN < 1 ? 'Empieza mañana' : TN > N ? 'Reto terminado' : 'Día';
-  $('#spSub').textContent = TN < 1 ? 'Sábado 10 de octubre' : TN > N ? '25 de 25' : 'de 25 · ' + (N - n) + ' restantes';
   let tx = 0, ty = 0, cx = 0, cy = 0;
   const onMove = (x, y) => { tx = (x / innerWidth - .5) * 2; ty = (y / innerHeight - .5) * 2; };
   sp.addEventListener('pointermove', e => onMove(e.clientX, e.clientY));
@@ -1564,7 +1927,7 @@ const mala = (() => {
 render();
 askPersist();
 loadPhotos().then(render);
-if (!lsGet(LS)) idbGet('kv', 'state').then(o => { if (o && o.days && !Object.keys(state.days).some(k => hasData(state.days[k]))) { state.days = o.days; state.config = Object.assign(defaultConfig(), o.config || {}); render(); } }).catch(() => {});
+if (!lsGet(LS)) idbGet('kv', 'state').then(o => { if (o && o.days && !Object.keys(state.days).some(k => hasData(state.days[k]))) { state.days = o.days; state.config = ensureProjects(Object.assign(defaultConfig(), o.config || {})); applyProject(); render(); } }).catch(() => {});
 if ('serviceWorker' in navigator && location.protocol !== 'file:') addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 })();
 </script>
