@@ -1,6 +1,6 @@
 /* Monk Mode — works offline. The page loads fresh when there is internet;
    fonts, 3D engine, images and icons come from the phone's cache. */
-const V = 'monkmode-v2';
+const V = 'monkmode-v3';
 const SHELL = [
   './', './index.html', './manifest.webmanifest',
   './vendor/three.min.js', './img/statue.webp',
